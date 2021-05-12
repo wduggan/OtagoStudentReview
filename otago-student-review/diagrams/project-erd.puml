@@ -1,0 +1,59 @@
+@startuml
+skinparam Style StrictUML
+skinparam LineType ortho
+skinparam monochrome true
+
+class Student {
+    * Student_ID: Varchar2(7) <<PK>>
+--
+    * First_Name: String(25)
+    * Last_Name: String(25)
+    * Mobile_Phone_Number: Integer(10)
+    * Email_Address: String(50)
+    * Password: Varchar2(25)
+}
+
+
+class Paper {
+    * Paper_ID: Varchar2(8) <<PK>>
+--
+    * Department: String(50)
+    * Paper_Title: String(50)
+    * Paper_Code: String(10)
+    * Description: String(90)
+    * Review: String(90)
+}
+
+class Hall {
+    * Hall_ID: Varchar2(8) <<PK>>
+--
+    * Hall_Title: String(50)
+    * Description: String(100)
+    * Review: String(90)
+}
+
+class Library {
+    * Library_ID: Varchar2(8) <<PK>>
+--
+    * Library_Title: String(50)
+    * Description: String(100)
+    * Review: String(90)
+}
+
+class Tutor {
+    * Tutor_ID: Varchar2(8) <<PK>>
+--
+    * Paper_ID: Varchar2(8) <<FK>>
+    * Name: String(100)
+    * Email_Address: String(50)
+    * Description: String(100)
+    * Review: String(90)
+}
+
+
+Student |o-right-o{ Paper : \t
+Student |o-up-o{ Hall
+Student |o-left-o{ Library : \t
+Paper }|-down-o{ Tutor
+
+@enduml
