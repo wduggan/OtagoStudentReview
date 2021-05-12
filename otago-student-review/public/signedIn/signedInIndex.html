@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingApp">
+    <head>
+        <title>Otago Student Review: Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/shopping.js"></script>
+    </head>
+
+    <body ng-controller="CustomerController as custCtrl">
+        <header>
+            <nav>
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a href="viewPapers.html">Papers</a></li>
+                    <li><a href="viewTutors.html">Tutors</a></li>
+                    <li><a href="viewHalls.html">Halls</a></li>
+                    <li><a href="" ng-click="custCtrl.signOut()">Sign Out</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="welcome">{{custCtrl.welcome}}</div>
+
+        <h1>Welcome to Otago Student Review</h1>
+
+        <main>
+            <section class="boxes">
+                <h2>About us:</h2>
+                <figure>
+                    <img src="../images/shield.png" alt="Product Image">
+                </figure>
+            </section>
+        </main>
+
+        <footer class="boxes">
+            <p>Extra info...</p>
+        </footer>
+
+    </body>
+
+</html>

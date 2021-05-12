@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingApp" ng-controller="CustomerController as custCtrl">
+    <head>
+        <title>Otago Student Review: View Papers</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/shopping.js"></script>
+    </head>
+
+    <body ng-controller="ProductController as prodCtrl">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="signedInIndex.html">Home</a></li>
+                    <li><a>Papers</a></li>
+                    <li><a href="viewTutors.html">Tutors</a></li>
+                    <li><a href="viewHalls.html">Halls</a></li>
+                    <li><a href="" ng-click="custCtrl.signOut()">Sign Out</a></li>
+                </ul>
+            </nav>
+            <!--<div ng-include="'menu.html'" ></div>-->
+        </header>
+        <div id="welcome">{{custCtrl.welcome}}</div>
+
+        <h1>Papers</h1>
+
+        <main>
+
+            <section id="wrapper">
+
+                <div id="side-box">
+                <h2>Select a Subject Area:</h2>
+
+                <ul> A:
+                    <li> Accounting</li>
+                    <li>Acupuncture</li>
+                    <li>Addiction and Co-existing Disorders</li>
+                    <li>Advanced Clinical Nursing</li>
+                    <li>Advanced Nutrition Practice</li>
+                    <li>Advertising</li>
+                    <li>Aeromedical Retrieval and Transport</li>
+                    <li>Agricultural Innovation</li>
+                    <li>Anatomy</li>
+                    <li>Anthropology</li>
+                    <li>Applied Geology</li>
+                    <li>Applied Science</li>
+                    <li>Aquaculture and Fisheries</li>
+                    <li>Archaeology</li>
+                    <li>Asian Studies</li>
+                    <li>Aviation Medicine</li>
+                </ul>
+                </div>
+                <div id="main-box">
+                    <table ng-controller="CartController as cartCtrl">
+                        <thead>
+                            <tr>
+                                <th class="paper-name">Paper Name</th>
+                                <th>Reviews</th>
+                                <th class="add-review"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--ng-repeat is kinda like a foreach loop. For each product in prodCtrl.products-->
+                            <tr ng-repeat="product in prodCtrl.products">
+                                <td>{{product.name}}</td>
+                                <td>{{product.description}}</td>
+                                <td><button ng-click="cartCtrl.storeProduct(product)">Leave a Review</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="boxes">
+            <p>Extra info...</p>
+        </footer>
+
+    </body>
+
+</html>

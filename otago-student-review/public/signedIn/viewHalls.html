@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingApp" ng-controller="CustomerController as custCtrl">
+    <head>
+        <title>Otago Student Review: View Halls</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/ngStorage.js"></script>
+        <script src="js/shopping.js"></script>
+    </head>
+
+    <body ng-controller="ProductController as prodCtrl">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="signedInIndex.html">Home</a></li>
+                    <li><a href="viewPapers.html">Papers</a></li>
+                    <li><a href="viewTutors.html">Tutors</a></li>
+                    <li><a>Halls</a></li>
+                    <li><a href="" ng-click="custCtrl.signOut()">Sign Out</a></li>
+                </ul>
+            </nav>
+            <!--<div ng-include="'menu.html'" ></div>-->
+        </header>
+        <div id="welcome">{{custCtrl.welcome}}</div>
+
+        <h1>Halls</h1>
+
+        <main>
+            <section class="boxes">
+
+                <h2>Select a Hall:</h2>
+
+            </section>
+        </main>
+
+        <footer class="boxes">
+            <p>Extra info...</p>
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="OtagoReviewApp">
+    <head>
+        <title>Otago Student Review: Create Account</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script src="../js/angular.js"></script>
+        <script src="../js/angular-resource.js"></script>
+        <script src="../js/ngStorage.js"></script>
+        <script src="../js/otagoReviewApp.js"></script>
+    </head>
+
+    <body ng-controller="StudentController as studCtrl">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="signIn.html">Sign In</a></li>
+                </ul>
+            </nav>
+            <!--<div ng-include="'menu.html'" ></div>-->
+        </header>
+
+        <h1>Create an Account</h1>
+
+        <main>
+            <section class="boxes">
+                <h2>Please create an account.</h2>
+
+                <form ng-submit="studCtrl.registerStudent(student)">
+                    <fieldset class="textInputs">
+                        <legend>Account Details</legend>
+                        <ul>
+                            <li><label for="studentId">Student ID: </label><input type="text" ng-model="student.studentId" id="studentId" tabindex="1" required pattern="[0-9]+" placeholder="Please enter your Student ID"></li>
+                            <li><label for="firstName">First name: </label><input type="text" ng-model="student.firstName" id="firstName" tabindex="2" required pattern="[a-zA-Z '-]+" placeholder="Please enter your first name"></li>
+                            <li><label for="surName">Surname: </label><input type="text" ng-model="student.surName" id="surName" tabindex="3" required pattern="[a-zA-Z '-]+" placeholder="Please enter your last name"></li>
+                            <li><label for="emailAddress">Email address: </label><input type="email" ng-model="student.emailAddress" id="emailAddress" tabindex="4" required placeholder="Please enter your email address"></li>
+                            <li><label for="password">Password: </label><input type="password" ng-model="student.password" id="password" tabindex="5" required placeholder="Please enter your password"></li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <label><input type="reset" name="reset" value="Reset"></label>
+                        <label><input type="submit" name="submit" value="Create Account"></label>
+                    </fieldset>
+                </form>
+
+            </section>
+        </main>
+
+        <footer class="boxes">
+            <p>Extra info...</p>
+        </footer>
+
+    </body>
+
+</html>
